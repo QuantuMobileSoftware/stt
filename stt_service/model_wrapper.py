@@ -1,3 +1,5 @@
+import os
+
 import torch
 from glob import glob
 import asyncio
@@ -24,6 +26,7 @@ class ModelWrapper:
         output = self.model(input)
 
         data_output = [self.decoder(text.cpu()) for text in output]
+        os.remove(filename)
         return data_output
 
     async def predict_async(self, filename):
