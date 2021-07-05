@@ -1,0 +1,10 @@
+web_app:
+  build: .
+  dockerfile: Dockerfile
+  volumes:
+    - .:/code
+    - ~/.ssh:/root/.ssh
+  working_dir: /code
+  ports:
+    - "9000:9000"
+  command: python server.py
