@@ -20,8 +20,8 @@ except Exception as e:
     log.exception("Error during load of ModelWrapper")
 
 
-@routes.post("/api/predict")
-async def process_predict(request):
+@routes.post("/api/stt")
+async def process_stt(request):
     filename = f"{datetime.now().strftime('%Y%m%d%H%M%S%f')}.wav"
     with open(filename, 'wb') as fd:
         while True:

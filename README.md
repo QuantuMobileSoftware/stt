@@ -13,4 +13,4 @@ Or
 **Test**
 
     wget https://opus-codec.org/static/examples/samples/speech_orig.wav
-    curl --data-binary @speech_orig.wav 'http://localhost:9000/api/predict'
+    curl --data-binary @speech_orig.wav 'http://localhost:9000/api/stt'
