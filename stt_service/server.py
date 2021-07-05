@@ -30,10 +30,13 @@ async def process_predict(request):
                 break
             fd.write(chunk)
 
-    text = await model_wrapper.predict_async(filename)
-    os.remove(filename)
-    data = {"Text": text}
-    return web.json_response(data)
+    if os.stat(filename).st_size != 0:
+        text = await model_wrapper.predict_async(filename)
+        data = {"Text": text}
+        return web.json_response(data)
+    else:
+        os.remove(filename)
+        return web.json_response({})
 
 
 if __name__ == "__main__":
