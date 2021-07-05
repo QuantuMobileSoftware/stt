@@ -1,10 +1,5 @@
 web_app:
-  build: .
-  dockerfile: Dockerfile
-  volumes:
-    - .:/code
-    - ~/.ssh:/root/.ssh
-  working_dir: /code
+  image: quantumobile/stt:1625497419
   ports:
     - "9000:9000"
-  command: python server.py
+

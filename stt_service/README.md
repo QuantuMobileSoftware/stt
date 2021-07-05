@@ -1,8 +1,8 @@
-**Build application:**
-    command: `docker-compose -f docker-compose.yml build`
+**(Optional) Build the image**
+    `docker build -t quantumobile/stt:1625497419 .`
 
-**Run application:**
-    command: `docker-compose -f docker-compose.yml up -d`
+**Run the application:**
+    `docker-compose up -d`
 
 **Test**
     `wget https://opus-codec.org/static/examples/samples/speech_orig.wav`
